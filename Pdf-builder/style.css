@@ -1,0 +1,778 @@
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  color: #4f46e5;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  visibility: hidden;
+}
+
+.nav-container {
+  display: flex;
+
+
+  align-items: center;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #4f46e5;
+  padding-right: 470px;
+
+
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  left: -2.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-links button:hover {
+  color: #667eea;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 1rem auto 3rem auto;
+  background: linear-gradient(rgb(250, 250, 192), lightblue);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+#toggle-theme {
+  background-color: rgb(224, 216, 216);
+  width: 9rem;
+  height: 2.5rem;
+  border-radius: 10rem;
+
+}
+
+/* Landing Page */
+.landing {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.landing h1 {
+  font-size: 2.5rem;
+}
+
+.landing p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background-color: #10b981;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #059669;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fcfcfc;
+}
+
+.cta-button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 600;
+}
+
+.cta-button:hover {
+  background-color: #4338ca;
+}
+
+/* Form Sections */
+.education-entry,
+.work-entry,
+.project-entry {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+}
+
+.education-entry label,
+.work-entry label,
+.project-entry label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.education-entry input,
+.work-entry input,
+.project-entry input,
+.work-entry textarea,
+.project-entry textarea {
+  width: 95%;
+}
+
+/* Skills Input */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  background: #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-tag::after {
+  content: '×';
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+
+/* --- RESUME TEMPLATE STYLES --- */
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  text-align: left;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 29.7cm;
+  /* A4 height */
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 2.5rem;
+  background-color: #f0f4f8;
+  position: relative;
+  justify-content: space-between;
+}
+
+.resume-header img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+
+  /* Corrected from the previous code */
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.header-info {
+  text-align: left;
+}
+
+.contact-info {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.contact-info p {
+  margin: 0.25rem 0;
+}
+
+.contact-info a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.resume-main {
+  display: flex;
+  flex-direction: row;
+  padding: 2.5rem;
+  gap: 2rem;
+}
+
+.left-column {
+  flex: 2;
+  min-width: 400px;
+}
+
+.right-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h3 {
+  border-bottom: 2px solid #4f46e5;
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+/* Work Experience Preview */
+.work-entry-preview {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  position: relative;
+}
+
+.work-entry-preview .work-info {
+  flex: 1;
+  margin-right: 120px;
+}
+
+.work-entry-preview .work-info h4 {
+  margin: 0;
+  display: inline;
+}
+
+.work-entry-preview .work-info p {
+  margin: 0;
+  display: inline;
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.work-entry-preview .work-info ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.work-entry-preview .work-duration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* Education Preview */
+.education-entry-preview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.education-entry-preview .education-info {
+  flex: 1;
+}
+
+.education-entry-preview .education-info h4 {
+  margin: 0;
+}
+
+.education-entry-preview .education-info p {
+  margin: 0;
+}
+
+.education-entry-preview .education-duration {
+  flex: none;
+  white-space: nowrap;
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* Project Preview */
+.project-entry-preview {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.project-entry-preview .project-info {
+  flex: 1;
+}
+
+.project-entry-preview .project-info h4 {
+  margin: 0 0 0.5rem 0;
+}
+
+.project-entry-preview .project-info p {
+  margin: 0;
+}
+
+.project-entry-preview .project-duration {
+  flex: none;
+  white-space: nowrap;
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* Skills List */
+.skills-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background-color: #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Skills/Languages suggestions */
+.suggestions {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: -0.5rem;
+  background: #fff;
+  z-index: 10;
+  position: relative;
+}
+
+.suggestions div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background-color: #f0f0f0;
+}
+
+/* --- MY RESUMES SECTION STYLES --- */
+.resumes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.resume-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.resume-card-header {
+  background-color: #f0f4f8;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resume-card-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.resume-card-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1a202c;
+}
+
+.resume-card-body {
+  padding: 1rem;
+}
+
+.resume-card-body p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.resume-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+.resume-card-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.view-btn {
+  background-color: #4f46e5;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.edit-btn {
+  background-color: #10b981;
+  /* A different color for the edit button */
+  color: white;
+  margin: 0 0.5rem;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.view-btn:hover {
+  background-color: #4338ca;
+}
+
+.edit-btn:hover {
+  background-color: #059669;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+/* --- MODAL STYLES --- */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Ensure the portfolio preview inside the modal is correctly styled */
+#modal-preview .portfolio {
+  margin-top: 0;
+  box-shadow: none;
+  min-height: auto;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+/* ================================== */
+/* Print Styles */
+/* ================================== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #portfolio,
+  #portfolio *,
+  #modal-preview,
+  #modal-preview * {
+    visibility: visible;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #portfolio,
+  #modal-preview .portfolio {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* Use 100% height to fill the entire page */
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    min-height: auto;
+    font-size: 0.8em;
+    /* Adjusted overall font size for print */
+  }
+
+  .resume-header,
+  .resume-main {
+    padding: 1.5rem 2rem;
+    /* Reduced padding for a more compact design */
+  }
+
+  .resume-header {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .resume-header h2 {
+    font-size: 2rem;
+  }
+
+  .resume-header img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact-info {
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .resume-main {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .left-column {
+    flex: 2;
+    min-width: unset;
+  }
+
+  .right-column {
+    flex: 1;
+    min-width: unset;
+  }
+
+  .section {
+    margin-bottom: 1rem;
+    page-break-inside: avoid;
+  }
+
+  .section h3 {
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* FIX: Work Experience and Projects alignment using a nested flexbox */
+  .work-entry-preview {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    /* Two columns: one for content, one for duration */
+    gap: 1em;
+    /* Space between the company name and duration */
+    margin-bottom: 0.75rem;
+    page-break-inside: avoid;
+  }
+
+  .work-entry-preview .work-info {
+    grid-column: 1 / 2;
+    /* Ensures the info block stays in the first column */
+    line-height: 1.3;
+  }
+
+  .work-entry-preview .work-info h4 {
+    margin: 0;
+    font-size: 1em;
+    display: inline-block;
+    margin-right: 0.5rem;
+    /* Space between company name and job title */
+  }
+
+  .work-entry-preview .work-info p {
+    margin: 0;
+    display: inline-block;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+  }
+
+  .work-entry-preview .work-duration {
+    grid-column: 2 / 3;
+    /* Places the duration in the second column */
+    text-align: right;
+    /* Aligns the duration to the right */
+    white-space: nowrap;
+    /* Prevents the date from wrapping */
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+    line-height: 1.3;
+  }
+
+  .work-entry-preview .work-info ul {
+    margin-top: 0.2rem;
+    padding-left: 1.25rem;
+    font-size: 0.9em;
+  }
+
+  /* FIX: Project alignment using a precise grid layout */
+  .project-entry-preview {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 0.75rem;
+    page-break-inside: avoid;
+  }
+
+  .project-entry-preview .project-info h4 {
+    grid-column: 1 / 2;
+    margin: 0;
+    font-size: 1em;
+  }
+
+  .project-entry-preview .project-info p {
+    grid-column: 1 / 2;
+    margin: 0.2rem 0;
+    font-size: 0.9em;
+  }
+
+  .project-entry-preview .project-duration {
+    grid-column: 2 / 3;
+    white-space: nowrap;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+    align-self: center;
+    /* Vertically align the duration */
+  }
+
+  .education-entry-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    page-break-inside: avoid;
+  }
+
+  .skills-list li {
+    padding: 4px 8px;
+    font-size: 0.8em;
+  }
+}
