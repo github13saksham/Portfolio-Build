@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 function App() {
-	const [count, setCount] = useState(0);
-	const { user, isLoaded, isSignedIn } = useUser();
+	const [] = useState(0);
+	const { isLoaded, isSignedIn } = useUser();
 
 	// If not signed in, redirect to /auth
 	if (!isSignedIn && isLoaded) {
