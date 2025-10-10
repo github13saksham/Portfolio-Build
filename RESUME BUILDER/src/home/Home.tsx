@@ -120,7 +120,7 @@ import darkhero_img from "../assets/images/resumebannerimage.jpg";
 import { Globe, FileText, ArrowRight } from "lucide-react";
 
 function Home() {
-	const [open, setopen] = useState(false);
+	const [] = useState(false);
 	const navigate = useNavigate();
 	return (
 		// <div className="relative min-h-screen w-full font-sans text-gray-800">

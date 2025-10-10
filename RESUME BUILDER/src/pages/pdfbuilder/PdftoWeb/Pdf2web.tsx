@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/home/Navbar";
 
 export default function PdfToPortfolio() {
-	const [file, setFile] = useState(null);
+	const [file, setFile] = useState<File | null>(null);
 	const [previewVisible, setPreviewVisible] = useState(false);
 
-	const handleFileChange = (e) => {
-		setFile(e.target.files[0]);
+	const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+		setFile(e.target.files?.[0] || null);
 		setPreviewVisible(false);
 	};
 

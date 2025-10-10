@@ -12,7 +12,6 @@ import Myresume from "./Nav-bar components/Myresume.tsx";
 
 import ResumeWebsite from "./pages/pdfbuilder/ResumeBuilder/ResumeWebsite.tsx";
 import Pdf2web from "./pages/pdfbuilder/PdftoWeb/Pdf2web.tsx";
-import ResumePreview from "./components/Resume-Preview/ResumePreview.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -26,7 +25,6 @@ const router = createBrowserRouter([
 			{ path: "/pages/ResumeBuilder", element: <ResumeWebsite /> },
 			{ path: "/Nav-bar components", element: <Myresume /> },
 			{ path: "/pages/PdftoWeb", element: <Pdf2web /> },
-			{ path: "/components/Resume-Preview", element: <ResumePreview /> },
 		],
 	},
 	{ path: "/auth", element: <Signin /> },
