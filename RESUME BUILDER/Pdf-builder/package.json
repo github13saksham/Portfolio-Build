@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "html2pdf.js": "^0.10.3",
+    "puppeteer": "^24.20.0"
+  }
+}
