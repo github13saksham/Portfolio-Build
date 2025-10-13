@@ -95,7 +95,7 @@ function Pdfbuilder() {
 			<iframe
 				ref={iframeRef}
 				className="w-full min-h-screen pt-18"
-				src="/Pdf-builder/index.html"
+				src={`${import.meta.env.BASE_URL}Pdf-builder/index.html`}
 				title="embedded-pdfbuilder"
 			/>
 		</div>
