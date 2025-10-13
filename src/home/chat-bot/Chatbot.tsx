@@ -71,7 +71,9 @@ function Chatbot() {
 
 		try {
 			const response = await axios({
-				url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyBrskB0emtrhw1III2smuU5XABed9O6uP4",
+				url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${
+					import.meta.env.VITE_GEMINI_API_KEY
+				}`,
 				method: "post",
 				data: {
 					contents: [
