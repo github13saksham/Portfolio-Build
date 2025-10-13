@@ -9,7 +9,7 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import Dashboard from "./dashboard/Dashboard.tsx";
 import Pdfbuilder from "./pages/pdfbuilder/Pdfbuilder.tsx";
 import Myresume from "./Nav-bar components/Myresume.tsx";
-
+import Chatbot from "./home/chat-bot/Chatbot.tsx";
 import ResumeWebsite from "./pages/pdfbuilder/ResumeBuilder/ResumeWebsite.tsx";
 import Pdf2web from "./pages/pdfbuilder/PdftoWeb/Pdf2web.tsx";
 
@@ -25,6 +25,7 @@ const router = createBrowserRouter([
 			{ path: "/pages/ResumeBuilder", element: <ResumeWebsite /> },
 			{ path: "/Nav-bar components", element: <Myresume /> },
 			{ path: "/pages/PdftoWeb", element: <Pdf2web /> },
+			{ path: "/home/chat-bot", element: <Chatbot /> },
 		],
 	},
 	{ path: "/auth", element: <Signin /> },

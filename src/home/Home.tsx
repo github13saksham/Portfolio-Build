@@ -114,7 +114,7 @@ import { Link } from "react-router-dom";
 // import Chatbot from "./Chatbot";
 import heroimg from "../assets/images/generated-image.png"; // Ensure correct path
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import darkhero_img from "../assets/images/resumebannerimage.jpg";
 import { Globe, FileText, ArrowRight } from "lucide-react";
@@ -122,6 +122,19 @@ import { Globe, FileText, ArrowRight } from "lucide-react";
 function Home() {
 	const [] = useState(false);
 	const navigate = useNavigate();
+	const [visible, setVisible] = useState(true);
+	// useEffect(() => {
+	// 	const timer = setTimeout(() => setVisible(false), 5000); // ⏱ disappears after 5s
+	// 	return () => clearTimeout(timer);
+	// }, []);
+	useEffect(() => {
+		const enterTimer = setTimeout(() => setVisible(true), 100);
+		const exitTimer = setTimeout(() => setVisible(false), 5000);
+		return () => {
+			clearTimeout(enterTimer);
+			clearTimeout(exitTimer);
+		};
+	}, []);
 	return (
 		// <div className="relative min-h-screen w-full font-sans text-gray-800">
 		// 	{/* Background Image with Dark Overlay */}
@@ -326,8 +339,22 @@ function Home() {
 			>
 				© 2025 ResumeBuilderPro. All rights reserved.
 			</footer>
-
-			{/* <Chatbot /> */}
+			<div className="fixed bottom-15 right-2 z-[9999]">
+				<Link to="/home/chat-bot" className="relative group">
+					<span className=" drop-shadow-cyan-600 transition-all duration-300 text-3xl group-hover:text-5xl ">
+						🤖
+					</span>
+					{/* Speech bubble */}
+					<div
+						className={`absolute bottom-full w-30 right-0 mb-2 px-3 py-2 bg-white text-black text-sm rounded-lg shadow-lg border border-gray-300 transition-all duration-500 ${
+							visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+						}`}
+					>
+						Need help? 💬
+						<div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+					</div>
+				</Link>
+			</div>
 		</div>
 	);
 }

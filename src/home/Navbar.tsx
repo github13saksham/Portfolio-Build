@@ -73,6 +73,15 @@ function Navbar() {
 
 				<li>
 					<Link
+						to="/home/chat-bot"
+						className="hover:text-blue-600 dark:hover:text-cyan-300"
+					>
+						Suggestions
+					</Link>
+				</li>
+
+				<li>
+					<Link
 						to="/dashboard"
 						className="hover:text-blue-600 dark:hover:text-cyan-300"
 					>
