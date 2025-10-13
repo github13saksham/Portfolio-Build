@@ -167,7 +167,7 @@ function Home() {
 			<div className="absolute inset-0 bg-black/70 dark:bg-black/85 transition-all duration-700 z-10"></div>
 
 			{/* Top Navbar */}
-			<header className="fixed top-0 left-0 z-20  items-center justify-between  max-w-7xl mx-auto">
+			<header className="relative top-0 w-full z-20  items-center justify-between   mx-auto">
 				<Navbar />
 			</header>
 
