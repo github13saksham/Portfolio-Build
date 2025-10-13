@@ -1,5 +1,4 @@
 import { useUser } from "@clerk/clerk-react";
-import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 function App() {
