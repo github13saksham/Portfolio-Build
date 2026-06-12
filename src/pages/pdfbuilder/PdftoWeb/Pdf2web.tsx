@@ -554,47 +554,36 @@ export default function PdfToPortfolio() {
 	const showResult = !!websiteHtml;
 
 	return (
-		<div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1c] font-sans text-gray-900 dark:text-white transition-colors duration-500 overflow-x-hidden">
-			{/* Ambient blobs */}
-			<div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-				<div className="absolute -top-20 -left-20 w-[40rem] h-[40rem] bg-purple-400/20 dark:bg-purple-600/10 rounded-full blur-[120px] animate-pulse" />
-				<div className="absolute top-1/2 -right-20 w-[35rem] h-[35rem] bg-indigo-400/15 dark:bg-indigo-500/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay:'2s' }} />
-			</div>
+		<div className="min-h-screen bg-white dark:bg-[#0a0a0a] font-sans text-[#0a0a0a] dark:text-[#fafafa] transition-colors duration-200 overflow-x-hidden">
 
-			<header className="relative z-50"><Navbar /></header>
+			<Navbar />
 
-			<main className="relative z-10 pt-24 px-6 pb-24 max-w-7xl mx-auto">
+			<main className="px-5 sm:px-8 pb-24 pt-24 max-w-7xl mx-auto">
 
 				{/* ── Hero ── */}
-				<motion.div className="text-center mb-14" initial={{ opacity:0, y:-20 }} animate={{ opacity:1, y:0 }} transition={{ duration:.5 }}>
-					<div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 dark:bg-white/5 backdrop-blur-md border border-slate-200/60 dark:border-white/10 rounded-full text-sm font-bold text-purple-700 dark:text-purple-300 mb-5 shadow-sm">
-						<Globe className="w-4 h-4" />
-						PDF → Live Portfolio Website
-					</div>
-					<h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
-						Resume PDF to a{' '}
-						<span className="bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
-							stunning website
-						</span>
+				<div className="mb-12">
+					<p className="text-[#4f46e5] text-xs font-semibold uppercase tracking-widest mb-3">PDF → Portfolio</p>
+					<h1 className="text-4xl md:text-5xl font-bold text-[#0a0a0a] dark:text-[#fafafa] mb-4 tracking-tight">
+						Resume PDF to a live website
 					</h1>
-					<p className="text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
-						Upload your PDF. We extract every detail and instantly build a fully responsive, downloadable portfolio.
+					<p className="text-[#737373] dark:text-[#a3a3a3] text-sm max-w-lg">
+						Upload your PDF — we parse every detail and instantly build a fully responsive, downloadable portfolio.
 					</p>
-				</motion.div>
+				</div>
 
 				{/* ── Steps indicator ── */}
-				<div className="flex items-center justify-center gap-3 mb-12 text-sm font-semibold">
+				<div className="flex items-center gap-3 mb-10 text-sm font-semibold">
 					{['Upload PDF', 'Pick Theme', 'Generate'].map((s, i) => (
 						<div key={s} className="flex items-center gap-3">
-							<div className={`flex items-center gap-2 px-4 py-2 rounded-xl border ${
+							<div className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg border text-xs ${
 								(i===0 && file) || (i===1) || (i===2 && showResult)
-									? 'bg-purple-600 text-white border-purple-600 shadow-lg shadow-purple-500/20'
-									: 'bg-white/60 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400'
+									? 'bg-[#0a0a0a] dark:bg-[#fafafa] text-white dark:text-[#0a0a0a] border-[#0a0a0a] dark:border-[#fafafa]'
+									: 'bg-white dark:bg-[#141414] border-[#e5e5e5] dark:border-[#262626] text-[#a3a3a3]'
 							}`}>
-								<span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold shrink-0">{i+1}</span>
+								<span className="w-4 h-4 rounded-full bg-current/20 flex items-center justify-center text-[10px] font-bold shrink-0">{i+1}</span>
 								{s}
 							</div>
-							{i < 2 && <div className="w-6 h-px bg-slate-300 dark:bg-slate-700" />}
+							{i < 2 && <div className="w-5 h-px bg-[#e5e5e5] dark:bg-[#262626]" />}
 						</div>
 					))}
 				</div>
@@ -609,18 +598,25 @@ export default function PdfToPortfolio() {
 						<div
 							onClick={() => fileInputRef.current?.click()}
 							onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}
-							className={`relative cursor-pointer rounded-3xl border-2 border-dashed p-12 flex flex-col items-center justify-center min-h-[340px] text-center transition-all duration-300 backdrop-blur-xl
+							className={`relative cursor-pointer rounded-2xl border-2 border-dashed p-12 flex flex-col items-center justify-center min-h-[340px] text-center transition-all duration-200
 							${isDragActive
-								? 'border-purple-500 bg-purple-50/60 dark:bg-purple-500/10 scale-[1.01]'
+								? 'border-[#4f46e5] bg-[#4f46e5]/5'
 								: file
-									? 'border-emerald-400 bg-emerald-50/40 dark:bg-emerald-500/10'
-									: 'border-slate-300 dark:border-slate-700 bg-white/60 dark:bg-white/5 hover:border-purple-400 hover:bg-slate-50/80 dark:hover:bg-white/10'
+									? 'border-[#0a0a0a] dark:border-[#fafafa] bg-[#f5f5f5] dark:bg-[#1a1a1a]'
+									: 'border-[#e5e5e5] dark:border-[#262626] bg-white dark:bg-[#141414] hover:border-[#a3a3a3] dark:hover:border-[#404040]'
 							}`}
 						>
 							<input ref={fileInputRef} type="file" accept="application/pdf" onChange={handleFileChange} className="sr-only" />
 
-							<div className={`w-20 h-20 rounded-2xl mb-5 flex items-center justify-center shadow-lg transition-all ${file ? 'bg-emerald-500 shadow-emerald-500/30' : 'bg-gradient-to-br from-purple-500 to-indigo-600 shadow-purple-500/30'}`}>
-								{file ? <CheckCircle2 className="w-10 h-10 text-white" /> : <Upload className="w-10 h-10 text-white" />}
+							<div className={`w-16 h-16 rounded-xl mb-5 flex items-center justify-center transition-all ${
+								file 
+									? 'bg-[#0a0a0a] dark:bg-[#fafafa]' 
+									: 'bg-[#f5f5f5] dark:bg-[#1a1a1a] border border-[#e5e5e5] dark:border-[#262626]'
+							}`}>
+								{file 
+									? <CheckCircle2 className="w-8 h-8 text-white dark:text-[#0a0a0a]" /> 
+									: <Upload className="w-8 h-8 text-[#a3a3a3]" />
+								}
 							</div>
 
 							{file ? (
@@ -651,10 +647,10 @@ export default function PdfToPortfolio() {
 						<button
 							onClick={showResult ? () => { setWebsiteHtml(null); setParsedData(null); setFile(null); } : handleGenerate}
 							disabled={!file || isProcessing}
-							className={`w-full flex items-center justify-center gap-3 py-4 rounded-2xl font-bold text-base transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0
+							className={`w-full flex items-center justify-center gap-3 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
 							${showResult
-								? 'bg-slate-800 dark:bg-slate-700 text-white hover:bg-slate-700 dark:hover:bg-slate-600 shadow-slate-900/20'
-								: 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5'
+								? 'bg-[#f5f5f5] dark:bg-[#1a1a1a] border border-[#e5e5e5] dark:border-[#262626] text-[#0a0a0a] dark:text-[#fafafa]'
+								: 'bg-[#0a0a0a] dark:bg-[#fafafa] text-white dark:text-[#0a0a0a] hover:-translate-y-0.5'
 							}`}
 						>
 							{isProcessing ? (
@@ -669,7 +665,7 @@ export default function PdfToPortfolio() {
 
 					{/* Right: Theme picker */}
 					<motion.div className="lg:col-span-5" initial={{ opacity:0, x:30 }} animate={{ opacity:1, x:0 }} transition={{ delay:.2 }}>
-						<div className="bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-slate-200/60 dark:border-white/10 rounded-3xl p-7 shadow-sm h-full">
+						<div className="card p-6 h-full">
 							<div className="flex items-center gap-3 mb-6">
 								<div className="w-9 h-9 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
 									<LayoutTemplate className="w-5 h-5 text-white" />
@@ -720,20 +716,21 @@ export default function PdfToPortfolio() {
 							<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-5">
 								<div>
 									<h2 className="text-2xl font-bold text-slate-900 dark:text-white">Your Portfolio Website ✨</h2>
-									<p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+									<h2 className="text-2xl font-bold text-[#0a0a0a] dark:text-white">Your Portfolio Website ✨</h2>
+									<p className="text-sm text-[#737373] dark:text-slate-400 mt-0.5">
 										Built from <strong>{file?.name}</strong> · <strong>{theme.name}</strong> theme · Switch themes live above
 									</p>
 								</div>
 								<button
 									onClick={handleDownload}
-									className="flex items-center gap-2.5 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-2xl font-bold text-sm shadow-lg shadow-purple-500/20 hover:-translate-y-0.5 transition-all"
+									className="flex items-center gap-2 px-5 py-2.5 bg-[#0a0a0a] dark:bg-[#fafafa] text-white dark:text-[#0a0a0a] rounded-xl font-semibold text-sm hover:-translate-y-0.5 transition-all"
 								>
 									<Download className="w-4 h-4" /> Download HTML File
 								</button>
 							</div>
 
 							{/* Fake browser chrome */}
-							<div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl border border-slate-200/60 dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden ring-1 ring-black/5 dark:ring-white/10">
+							<div className="bg-white dark:bg-[#0a0a0a] border border-[#e5e5e5] dark:border-[#262626] rounded-3xl shadow-2xl overflow-hidden">
 								{/* Browser bar */}
 								<div className="flex items-center gap-4 px-5 py-3.5 bg-slate-100/80 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 backdrop-blur">
 									<div className="flex gap-1.5 shrink-0">

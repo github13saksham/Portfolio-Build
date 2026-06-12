@@ -285,78 +285,79 @@ function Pdfbuilder() {
 	const AccordionHeader = ({ stepNum, title, isActive, onClick }: any) => (
 		<button 
 			onClick={onClick}
-			className={`w-full flex items-center justify-between p-6 bg-white/60 dark:bg-white/5 backdrop-blur-xl border ${isActive ? 'border-blue-500/50 dark:border-blue-400/50' : 'border-slate-200/50 dark:border-white/10'} rounded-2xl transition-all duration-300 hover:bg-white/80 dark:hover:bg-white/10 shadow-sm`}
+			className={`w-full flex items-center justify-between p-5 border rounded-xl transition-all duration-150 ${
+				isActive 
+					? 'border-[#4f46e5] bg-[#4f46e5]/5' 
+					: 'border-[#e5e5e5] dark:border-[#262626] bg-white dark:bg-[#141414] hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a]'
+			}`}
 		>
-			<div className="flex items-center gap-4">
-				<div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold transition-colors ${isActive ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
+			<div className="flex items-center gap-3">
+				<div className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold transition-colors ${
+					isActive 
+						? 'bg-[#4f46e5] text-white' 
+						: 'bg-[#f5f5f5] dark:bg-[#1a1a1a] text-[#737373]'
+				}`}>
 					{stepNum}
 				</div>
-				<h3 className={`text-xl font-bold transition-colors ${isActive ? 'text-blue-600 dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>{title}</h3>
+				<h3 className={`text-sm font-semibold transition-colors ${
+					isActive 
+						? 'text-[#4f46e5]' 
+						: 'text-[#0a0a0a] dark:text-[#fafafa]'
+				}`}>{title}</h3>
 			</div>
-			<ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`} />
+			<ChevronDown className={`w-4 h-4 text-[#a3a3a3] transition-transform duration-200 ${isActive ? 'rotate-180' : ''}`} />
 		</button>
 	);
 
 	return (
-		<div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1c] font-sans transition-colors duration-500 overflow-hidden relative">
-			{/* Ambient Glowing Background Elements */}
-			<div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-				<div className="absolute -top-20 -left-20 w-[40rem] h-[40rem] bg-purple-400/20 dark:bg-purple-600/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-pulse"></div>
-				<div className="absolute top-40 -right-20 w-[35rem] h-[35rem] bg-blue-400/20 dark:bg-blue-500/10 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen animate-pulse" style={{ animationDelay: '2s' }}></div>
-				<div className="absolute -bottom-40 left-1/4 w-[45rem] h-[45rem] bg-pink-300/20 dark:bg-pink-600/10 rounded-full blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-pulse" style={{ animationDelay: '4s' }}></div>
-			</div>
+		<div className="min-h-screen bg-white dark:bg-[#0a0a0a] font-sans transition-colors duration-200 overflow-x-hidden">
 
-			<header className="relative z-50">
-				<Navbar />
-			</header>
+			<Navbar />
 
 			{/* Main content */}
-			<main className="relative z-10 pt-32 pb-20">
-				<div className="text-center px-6 mb-16">
-					<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-						<div className="flex flex-wrap justify-center gap-4 mb-6">
-							<div className="inline-flex items-center gap-2 px-4 py-2 bg-white/50 dark:bg-white/5 backdrop-blur-md border border-slate-200/50 dark:border-white/10 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-300 shadow-sm">
-								<FileText className="w-4 h-4 text-emerald-500" />
-								<span>PDF Resume Builder</span>
-							</div>
-							<div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-sm font-bold text-emerald-600 dark:text-emerald-400 shadow-sm">
-								<CheckCircle2 className="w-4 h-4" />
-								<span>100% ATS Optimized</span>
-							</div>
-						</div>
-						<h1 className="text-5xl md:text-6xl font-extrabold mb-6 text-slate-900 dark:text-white tracking-tight">
-							Build Your <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">Professional Resume</span>
-						</h1>
-						<p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
-							Craft a standard, ATS-friendly PDF resume in minutes. Use our pre-engineered templates designed to pass recruiters and screening systems.
-						</p>
-					</motion.div>
+			<main className="max-w-7xl mx-auto px-5 sm:px-8 pt-28 pb-20">
+				<div className="mb-10">
+					<p className="text-[#4f46e5] text-xs font-semibold uppercase tracking-widest mb-3">PDF Resume Builder</p>
+					<h1 className="text-3xl md:text-4xl font-bold text-[#0a0a0a] dark:text-[#fafafa] mb-3 tracking-tight">
+						Build your professional resume
+					</h1>
+					<p className="text-[#737373] dark:text-[#a3a3a3] text-sm max-w-xl">
+						ATS-friendly templates, AI-assisted writing, and instant PDF export.
+					</p>
 				</div>
 
 				{/* Main Container */}
-				<div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 					
 					{/* Left Column: Form Settings (8 cols) */}
 					<div className="lg:col-span-8 space-y-6">
 						
 						{/* Template Selection */}
-						<div className="bg-white/60 dark:bg-[#111827]/60 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-3xl p-8 shadow-sm">
-							<div className="flex items-center gap-3 mb-6">
-								<LayoutTemplate className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-								<h2 className="text-2xl font-bold text-slate-900 dark:text-white">Choose a Template</h2>
+						<div className="card p-6">
+							<div className="flex items-center gap-2 mb-5">
+								<LayoutTemplate className="w-4 h-4 text-[#4f46e5]" />
+								<h2 className="text-sm font-semibold text-[#0a0a0a] dark:text-[#fafafa]">Choose a Template</h2>
 							</div>
-							<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+							<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
 								{TEMPLATES.map(temp => (
 									<button 
 										key={temp.id}
 										onClick={() => setSelectedTemplate(temp.id)}
-										className={`relative p-4 rounded-2xl border ${selectedTemplate === temp.id ? 'border-blue-500 bg-blue-50 dark:bg-blue-500/10' : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800'} transition-all duration-300 hover:shadow-md outline-none focus:ring-2 focus:ring-blue-500/50`}
+										className={`relative p-3 rounded-xl border transition-all duration-150 outline-none text-left ${
+											selectedTemplate === temp.id 
+												? 'border-[#4f46e5] bg-[#4f46e5]/5' 
+												: 'border-[#e5e5e5] dark:border-[#262626] bg-white dark:bg-[#141414] hover:border-[#a3a3a3]'
+										}`}
 									>
-										<div className={`w-8 h-8 rounded-full ${temp.color} mb-3 shadow-inner`}></div>
-										<p className={`font-semibold text-left ${selectedTemplate === temp.id ? 'text-blue-700 dark:text-blue-400' : 'text-slate-700 dark:text-slate-300'}`}>{temp.name}</p>
+										<div className={`w-6 h-6 rounded-full ${temp.color} mb-2.5`}></div>
+										<p className={`text-xs font-medium ${
+											selectedTemplate === temp.id 
+												? 'text-[#4f46e5]' 
+												: 'text-[#0a0a0a] dark:text-[#fafafa]'
+										}`}>{temp.name}</p>
 										{selectedTemplate === temp.id && (
-											<div className="absolute top-4 right-4 text-blue-500">
-												<CheckCircle2 className="w-5 h-5" />
+											<div className="absolute top-2 right-2 text-[#4f46e5]">
+												<CheckCircle2 className="w-3.5 h-3.5" />
 											</div>
 										)}
 									</button>
@@ -397,13 +398,13 @@ function Pdfbuilder() {
 								<AnimatePresence>
 									{activeStep === 2 && (
 										<motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-											<div className="p-6 mt-2 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200/50 dark:border-white/5">
+											<div className="p-6 mt-2 border border-[#e5e5e5] dark:border-[#262626] bg-white dark:bg-[#141414] rounded-2xl">
 												<div className="flex justify-end mb-3">
 													<button 
-														onClick={generateSummaryWithAI} 
-														disabled={isGeneratingAI}
-														className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white rounded-lg text-sm font-bold shadow-md hover:shadow-lg transition-all disabled:opacity-50"
-													>
+													onClick={generateSummaryWithAI} 
+													disabled={isGeneratingAI}
+													className="flex items-center gap-2 px-3 py-1.5 bg-[#4f46e5] hover:bg-[#4338ca] text-white rounded-lg text-xs font-semibold transition-all disabled:opacity-50"
+												>
 														{isGeneratingAI ? <span className="animate-spin text-lg">⚙️</span> : <Sparkles className="w-4 h-4" />}
 														{isGeneratingAI ? 'Generating...' : 'AI Generate'}
 													</button>
@@ -413,7 +414,7 @@ function Pdfbuilder() {
 													value={resumeData.summary}
 													onChange={(e) => setResumeData(prev => ({ ...prev, summary: e.target.value }))}
 													rows={5}
-													className="w-full px-5 py-4 border border-slate-200 dark:border-slate-700 rounded-xl bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500/50 outline-none resize-none placeholder-slate-400 font-medium"
+													className="w-full px-5 py-4 border border-[#e5e5e5] dark:border-[#262626] rounded-xl bg-white dark:bg-[#0a0a0a] text-[#0a0a0a] dark:text-[#fafafa] focus:ring-2 focus:ring-[#4f46e5]/50 outline-none resize-none placeholder-[#a3a3a3] font-medium"
 												></textarea>
 											</div>
 										</motion.div>
@@ -427,13 +428,13 @@ function Pdfbuilder() {
 								<AnimatePresence>
 									{activeStep === 3 && (
 										<motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-											<div className="p-6 mt-2 bg-white/40 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200/50 dark:border-white/5 space-y-6">
+											<div className="p-6 mt-2 border border-[#e5e5e5] dark:border-[#262626] bg-white dark:bg-[#141414] rounded-2xl space-y-6">
 												{resumeData.experience.map((exp, idx) => (
-													<div key={exp.id} className="p-5 bg-white/60 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 relative">
+													<div key={exp.id} className="p-5 border border-[#e5e5e5] dark:border-[#262626] bg-[#fafafa] dark:bg-[#0a0a0a] rounded-xl relative">
 														<div className="flex justify-between items-center mb-4">
-															<h4 className="font-bold text-slate-700 dark:text-slate-300">Experience #{idx + 1}</h4>
+															<h4 className="font-bold text-[#0a0a0a] dark:text-[#fafafa]">Experience #{idx + 1}</h4>
 															{resumeData.experience.length > 1 && (
-																<button onClick={() => removeExperience(exp.id)} className="text-red-500 hover:text-red-600 p-1.5 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-lg transition-colors">
+																<button onClick={() => removeExperience(exp.id)} className="text-[#f43f5e] hover:text-[#e11d48] p-1.5 hover:bg-[#f43f5e]/10 rounded-lg transition-colors">
 																	<Trash2 className="w-4 h-4" />
 																</button>
 															)}
@@ -445,20 +446,20 @@ function Pdfbuilder() {
 															<input type="text" placeholder="Duration (Jan 2020 - Present)" value={exp.duration} onChange={(e) => updateExperience(exp.id, 'duration', e.target.value)} className="input-field" />
 														</div>
 														<div className="flex justify-between items-center mt-2 mb-2">
-															<span className="text-sm font-semibold text-slate-500 dark:text-slate-400">Responsibilities</span>
+															<span className="text-sm font-semibold text-[#737373] dark:text-[#a3a3a3]">Responsibilities</span>
 															<button 
-																onClick={() => generateExperienceWithAI(exp.id, exp.jobTitle, exp.company)} 
-																disabled={isGeneratingAI}
-																className="flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-white rounded-lg text-xs font-bold shadow hover:shadow-md transition-all disabled:opacity-50"
-															>
+													onClick={() => generateExperienceWithAI(exp.id, exp.jobTitle, exp.company)} 
+													disabled={isGeneratingAI}
+													className="flex items-center gap-2 px-3 py-1.5 bg-[#4f46e5] hover:bg-[#4338ca] text-white rounded-lg text-xs font-semibold transition-all disabled:opacity-50"
+												>
 																{isGeneratingAI ? <span className="animate-pulse">...</span> : <Sparkles className="w-3 h-3" />}
 																{isGeneratingAI ? 'Writing...' : 'AI Bullets'}
 															</button>
 														</div>
-														<textarea placeholder="Bullet points of your achievements and responsibilities..." value={exp.description} onChange={(e) => updateExperience(exp.id, 'description', e.target.value)} rows={4} className="input-area mt-1 w-full px-4 py-3 border border-slate-200 dark:border-slate-700 rounded-xl bg-white/50 dark:bg-slate-800/50 outline-none focus:ring-2 focus:ring-blue-500/50 text-slate-900 dark:text-white"></textarea>
+														<textarea placeholder="Bullet points of your achievements and responsibilities..." value={exp.description} onChange={(e) => updateExperience(exp.id, 'description', e.target.value)} rows={4} className="input-area mt-1 w-full px-4 py-3 border border-[#e5e5e5] dark:border-[#262626] rounded-xl bg-white dark:bg-[#0a0a0a] outline-none focus:ring-2 focus:ring-[#4f46e5]/50 text-[#0a0a0a] dark:text-[#fafafa]"></textarea>
 													</div>
 												))}
-												<button onClick={addExperience} className="w-full py-3 border-2 border-dashed border-blue-400 dark:border-blue-500/50 rounded-xl text-blue-600 dark:text-blue-400 font-semibold hover:bg-blue-50 dark:hover:bg-blue-500/10 transition-colors flex items-center justify-center gap-2">
+												<button onClick={addExperience} className="w-full py-3 border-2 border-dashed border-[#e5e5e5] dark:border-[#262626] rounded-xl text-[#737373] hover:text-[#4f46e5] hover:border-[#4f46e5] font-semibold transition-colors flex items-center justify-center gap-2">
 													<Plus className="w-4 h-4" /> Add Experience
 												</button>
 											</div>
@@ -477,39 +478,37 @@ function Pdfbuilder() {
 						<div className="sticky top-32 space-y-6">
 							
 							{/* Mini Preview Card */}
-							<div className="bg-white/60 dark:bg-[#111827]/60 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)]">
-								<div className="flex items-center gap-3 mb-6">
-									<div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center">
-										<Eye className="w-5 h-5 text-white" />
-									</div>
-									<h3 className="text-xl font-bold text-slate-900 dark:text-white">Live Status</h3>
+							<div className="p-5 border border-[#e5e5e5] dark:border-[#262626] bg-white dark:bg-[#141414] rounded-2xl">
+								<div className="flex items-center gap-2 mb-4">
+									<Eye className="w-4 h-4 text-[#4f46e5]" />
+									<h3 className="text-sm font-semibold text-[#0a0a0a] dark:text-[#fafafa]">Preview</h3>
 								</div>
-								
-								{/* Fake minimal preview graphic */}
-								<div onClick={previewResume} className="w-full aspect-[1/1.4] bg-slate-100 dark:bg-slate-800 rounded-xl p-4 overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700 relative flex flex-col items-center justify-center group cursor-pointer hover:border-blue-500 transition-colors">
-									<div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-blue-500/10 to-transparent"></div>
-									<FileText className="w-12 h-12 text-blue-500/50 mb-3" />
-									<p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Click to Full Preview</p>
+								<div
+									onClick={previewResume}
+									className="w-full aspect-[1/1.4] bg-[#f5f5f5] dark:bg-[#0a0a0a] border border-[#e5e5e5] dark:border-[#262626] rounded-lg flex flex-col items-center justify-center cursor-pointer hover:border-[#4f46e5] transition-colors group"
+								>
+									<FileText className="w-8 h-8 text-[#a3a3a3] mb-2 group-hover:text-[#4f46e5] transition-colors" />
+									<p className="text-xs font-medium text-[#a3a3a3] group-hover:text-[#4f46e5] transition-colors">Click to preview</p>
 								</div>
 							</div>
 
 							{/* Actions Card */}
-							<div className="bg-white/60 dark:bg-[#111827]/60 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.1)]">
-								<h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Export Options</h3>
+							<div className="p-5 border border-[#e5e5e5] dark:border-[#262626] bg-white dark:bg-[#141414] rounded-2xl space-y-2.5">
+								<h3 className="text-sm font-semibold text-[#0a0a0a] dark:text-[#fafafa] mb-3">Export</h3>
 								
-								<button onClick={generatePDF} disabled={isGenerating} className="w-full flex items-center justify-center gap-3 px-6 py-4 mb-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-bold hover:shadow-[0_8px_20px_rgb(79,70,229,0.3)] hover:-translate-y-1 transition-all duration-300 disabled:opacity-50">
-									<Download className="w-5 h-5" />
-									<span>{isGenerating ? 'Generating...' : 'Download PDF'}</span>
+								<button onClick={generatePDF} disabled={isGenerating} className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#4f46e5] hover:bg-[#4338ca] text-white rounded-lg text-sm font-semibold transition-all disabled:opacity-50">
+									<Download className="w-4 h-4" />
+									{isGenerating ? 'Generating...' : 'Download PDF'}
 								</button>
 
-								<button onClick={saveToBackend} disabled={isGenerating} className="w-full flex items-center justify-center gap-3 px-6 py-4 mb-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-xl font-bold hover:shadow-[0_8px_20px_rgb(16,185,129,0.3)] hover:-translate-y-1 transition-all duration-300 disabled:opacity-50">
-									<Save className="w-5 h-5" />
-									<span>{isGenerating ? 'Saving...' : 'Save to Dashboard'}</span>
+								<button onClick={saveToBackend} disabled={isGenerating} className="w-full flex items-center justify-center gap-2 px-4 py-3 border border-[#e5e5e5] dark:border-[#262626] text-[#0a0a0a] dark:text-[#fafafa] rounded-lg text-sm font-semibold hover:bg-[#f5f5f5] dark:hover:bg-[#1a1a1a] transition-colors disabled:opacity-50">
+									<Save className="w-4 h-4" />
+									{isGenerating ? 'Saving...' : 'Save to Dashboard'}
 								</button>
 								
-								<button onClick={previewResume} className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-300">
-									<Eye className="w-5 h-5" />
-									<span>Preview Changes</span>
+								<button onClick={previewResume} className="w-full flex items-center justify-center gap-2 px-4 py-3 border border-[#e5e5e5] dark:border-[#262626] text-[#737373] rounded-lg text-sm font-medium hover:bg-[#f5f5f5] dark:hover:bg-[#1a1a1a] transition-colors">
+									<Eye className="w-4 h-4" />
+									Preview changes
 								</button>
 							</div>
 
@@ -527,28 +526,28 @@ function Pdfbuilder() {
 						exit={{ opacity: 0 }}
 						className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
 					>
-						<div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onClick={() => !isGenerating && setShowPreviewModal(false)}></div>
+						<div className="absolute inset-0 bg-[#0a0a0a]/80" onClick={() => !isGenerating && setShowPreviewModal(false)}></div>
 						
 						<motion.div 
 							initial={{ scale: 0.95, opacity: 0, y: 20 }}
 							animate={{ scale: 1, opacity: 1, y: 0 }}
 							exit={{ scale: 0.95, opacity: 0, y: 20 }}
-							className="relative w-full max-w-5xl max-h-[90vh] bg-slate-50 dark:bg-slate-900 rounded-[2rem] shadow-2xl overflow-hidden flex flex-col"
+							className="relative w-full max-w-5xl max-h-[90vh] bg-white dark:bg-[#141414] border border-[#e5e5e5] dark:border-[#262626] rounded-2xl shadow-2xl overflow-hidden flex flex-col"
 						>
-							<div className="flex items-center justify-between px-8 py-6 border-b border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md z-10 sticky top-0">
+							<div className="flex items-center justify-between px-6 py-4 border-b border-[#e5e5e5] dark:border-[#262626] sticky top-0 bg-white dark:bg-[#141414] z-10">
 								<div>
-									<h2 className="text-2xl font-bold text-slate-900 dark:text-white">Live PDF Preview</h2>
-									<p className="text-slate-500 font-medium text-sm">Review your resume design before generating.</p>
+									<h2 className="font-semibold text-[#0a0a0a] dark:text-[#fafafa] text-sm">Live PDF Preview</h2>
+									<p className="text-xs text-[#a3a3a3] mt-0.5">Review before generating.</p>
 								</div>
-								<div className="flex gap-4">
-									<button onClick={generatePDF} disabled={isGenerating} className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-500/20 hidden sm:flex items-center gap-2">
-										<Download className="w-4 h-4" /> {isGenerating ? 'Generating...' : 'Download'}
+								<div className="flex gap-2.5">
+									<button onClick={generatePDF} disabled={isGenerating} className="btn-primary text-xs px-4 py-2 hidden sm:flex items-center gap-1.5 disabled:opacity-50">
+										<Download className="w-3.5 h-3.5" /> {isGenerating ? 'Generating...' : 'Download'}
 									</button>
-									<button onClick={saveToBackend} disabled={isGenerating} className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold transition-colors shadow-lg shadow-emerald-500/20 hidden sm:flex items-center gap-2">
-										<Save className="w-4 h-4" /> {isGenerating ? 'Saving...' : 'Save'}
+									<button onClick={saveToBackend} disabled={isGenerating} className="btn-ghost text-xs px-4 py-2 hidden sm:flex items-center gap-1.5 disabled:opacity-50">
+										<Save className="w-3.5 h-3.5" /> Save
 									</button>
-									<button onClick={() => !isGenerating && setShowPreviewModal(false)} className="w-10 h-10 bg-slate-200/50 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full flex items-center justify-center transition-colors">
-										<XIcon className="w-5 h-5" />
+									<button onClick={() => !isGenerating && setShowPreviewModal(false)} className="w-8 h-8 border border-[#e5e5e5] dark:border-[#262626] rounded-lg flex items-center justify-center text-[#737373] hover:text-[#0a0a0a] dark:hover:text-[#fafafa] transition-colors">
+										<XIcon className="w-4 h-4" />
 									</button>
 								</div>
 							</div>
